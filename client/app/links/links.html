@@ -1,4 +1,16 @@
 <div id='container'>
+    <a href="/#/shorten">Shorten Links</a>
+    <a href="/">View Links</a>
   <!-- Your html here -->
-  <span>LOL</span>
+  <div ng-controller='LinksController'>
+    <ul>
+      <li ng-repeat='link in data.links'>
+        <a href={{link.base_url}}/api/links/{{link.code}} ><h3>{{link.title}}</h3></a>
+        <span>{{link.url}}</span> <br>
+        <span>Code: {{link.code}}</span> <br>
+        <span>Visits: {{link.visits}}</span>
+        <hr>
+        </li>
+    </ul>
+  </div>
 </div>
