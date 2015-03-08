@@ -3,8 +3,9 @@
     <a href="/">View Links</a>
   <!-- Your html here -->
   <div ng-controller='LinksController'>
+  <input type='text' ng-model='search'>
     <ul>
-      <li ng-repeat='link in data.links'>
+      <li ng-repeat='link in data.links | orderBy:"-visits" | filter:search'>
         <a href={{link.base_url}}/api/links/{{link.code}} ><h3>{{link.title}}</h3></a>
         <span>{{link.url}}</span> <br>
         <span>Code: {{link.code}}</span> <br>

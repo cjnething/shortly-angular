@@ -19,8 +19,10 @@ angular.module('shortly.services', [])
       data: link
     })
     .then(function (resp) {
-      console.log(resp.data)
-      return resp.data;
+      console.log(resp.json)
+      $location.path('/');
+      return resp.json;
+
     });
   };
 
